@@ -20,4 +20,3 @@ See [ROADMAP.md](ROADMAP.md) for the upgrade plan, validation gates, and open de
 - Verify the exact board revision before ordering adapters.
 - Keep a known-good boot path during storage experiments.
 - Measure stability, temperatures, power use, and storage performance after each phase.
-
