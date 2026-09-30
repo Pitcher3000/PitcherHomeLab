@@ -2,7 +2,7 @@
 
 ## Goal
 
-Turn a Fujitsu FUTRO S940 into a reliable, low-power local media server. The first milestone expands memory to 16 GB, replaces the original 32 GB system drive with a 256 GB M.2 SATA SSD, and adds an 8 TB external media library.
+Turn a Fujitsu FUTRO S940 into a reliable, low-power local media server. The first milestone expands memory to 16 GB, replaces the original 32 GB system drive with a 256 GB M.2 SATA SSD, adds an 8 TB external media library, and incorporates an existing 1 TB external SSD.
 
 ## Status legend
 
@@ -24,6 +24,7 @@ The storage plan now uses a native M.2 SATA replacement, so no NVMe bridge is re
 | M.2 SSD | Western Digital PC SA530, 256 GB, M.2 2280 SATA III, `SDATN8Y-256G`, refurbished, HP SPS `L60641-001` | Internal system drive | €28.00 |
 | Hard disk | Hitachi/Western Digital, 8 TB, 3.5-inch, 7,200 RPM, SATA 6 Gb/s; PioParts product `P40100`, 12-month warranty; exact drive model pending label inspection | External media library | €129.00 |
 | Dock | ICY BOX IB-1122-U3, 2.5/3.5-inch SATA to USB 3.0, B-stock | Powered USB storage interface | €10.00 |
+| External SSD | Verbatim Vi550 S3, 1 TB, 2.5-inch SATA, rated up to 520 MB/s read and 500 MB/s write; connected through a generic ICY BOX USB enclosure | Role to be selected | Already owned |
 | Shipping shown | SSD order | — | €4.50 |
 | **Documented total** | Excludes any shipping not visible in the supplied order images | | **€171.50** |
 
@@ -103,13 +104,18 @@ Target: replace the factory 32 GB M.2 SATA SSD with the refurbished 256 GB Weste
 - SMART and sustained-load tests show no errors.
 - The original system can be restored if necessary.
 
-## Phase 3 — Add 8 TB external storage
+## Phase 3 — Add external storage
 
-Target: connect the 8 TB 3.5-inch SATA HDD through the externally powered ICY BOX IB-1122-U3 USB 3.0 dock and use it as the local media library.
+Targets:
+
+- Connect the 8 TB 3.5-inch SATA HDD through the externally powered ICY BOX IB-1122-U3 USB 3.0 dock and use it as the local media library.
+- Assign a role to the existing 1 TB Verbatim Vi550 S3 SSD connected through a generic ICY BOX USB enclosure.
 
 ### Intake and burn-in
 
 - [ ] Record the full HDD model and serial number from its label.
+- [x] Record the 1 TB SSD model: Verbatim Vi550 S3, 2.5-inch SATA, rated up to 520 MB/s read and 500 MB/s write.
+- [ ] Record the SSD serial number and health data; confirm the enclosure negotiates at USB 3.x speed.
 - [x] Record seller and warranty: PioParts, 12 months.
 - [ ] Verify that the supplied dock power adapter matches the IB-1122-U3 and is correctly rated.
 - [ ] Confirm that the drive reports 8 TB and that SMART passthrough works through the dock.
@@ -122,7 +128,9 @@ Target: connect the 8 TB 3.5-inch SATA HDD through the externally powered ICY BO
 ### Deployment
 
 - [ ] Choose the filesystem based on the host platform and recovery requirements.
+- [ ] Select the 1 TB SSD's role before formatting or moving data onto it.
 - [ ] Mount by UUID rather than `/dev/sdX` device name.
+- [ ] Give both external filesystems unique labels and document which physical device owns each UUID.
 - [ ] Configure safe behavior when the USB disk is absent at boot.
 - [ ] Keep media-server configuration, database, artwork, and watch-state data separate from the media library.
 - [ ] Record idle/load temperature and verify stable operation during a sustained transfer.
@@ -132,8 +140,8 @@ Target: connect the 8 TB 3.5-inch SATA HDD through the externally powered ICY BO
 
 ### Exit criteria
 
-- The full 8 TB capacity is available and mounts consistently.
-- SMART, surface, USB reconnect, reboot, and sustained-transfer tests pass.
+- The full 8 TB HDD and 1 TB SSD capacities are available and mount consistently.
+- SMART, USB reconnect, reboot, and sustained-transfer tests pass for both devices; the HDD also passes its full-surface test.
 - Important data has an independent backup copy.
 
 ## Phase 4 — Base homelab platform
@@ -162,7 +170,8 @@ Primary workload: local media serving on Debian stable. The media-server stack r
 2. Has the mixed Samsung memory pair completed an error-free memory test?
 3. What is the exact model, manufacture date, SMART history, and warranty of the 8 TB HDD?
 4. Which media-server application and deployment model will be used?
-5. Which client devices and codecs must be supported, and will transcoding be required?
+5. What role should the 1 TB external SSD serve?
+6. Which client devices and codecs must be supported, and will transcoding be required?
 
 ## Known risks
 
