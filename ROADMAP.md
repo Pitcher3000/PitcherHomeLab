@@ -2,7 +2,7 @@
 
 ## Goal
 
-Turn a Fujitsu FUTRO S940 into a reliable, low-power homelab host. The first milestone expands memory to 16 GB, replaces the original 32 GB system drive with a 256 GB M.2 SATA SSD, and adds 8 TB of external bulk storage.
+Turn a Fujitsu FUTRO S940 into a reliable, low-power local media server. The first milestone expands memory to 16 GB, replaces the original 32 GB system drive with a 256 GB M.2 SATA SSD, and adds an 8 TB external media library.
 
 ## Status legend
 
@@ -22,7 +22,7 @@ The storage plan now uses a native M.2 SATA replacement, so no NVMe bridge is re
 | Item | Identification | Role | Cost |
 | --- | --- | --- | ---: |
 | M.2 SSD | Western Digital PC SA530, 256 GB, M.2 2280 SATA III, `SDATN8Y-256G`, refurbished, HP SPS `L60641-001` | Internal system drive | €28.00 |
-| Hard disk | Hitachi/Western Digital, 8 TB, 3.5-inch, 7,200 RPM, SATA 6 Gb/s; PioParts product `P40100`, 12-month warranty; exact drive model pending label inspection | External bulk storage | €129.00 |
+| Hard disk | Hitachi/Western Digital, 8 TB, 3.5-inch, 7,200 RPM, SATA 6 Gb/s; PioParts product `P40100`, 12-month warranty; exact drive model pending label inspection | External media library | €129.00 |
 | Dock | ICY BOX IB-1122-U3, 2.5/3.5-inch SATA to USB 3.0, B-stock | Powered USB storage interface | €10.00 |
 | Shipping shown | SSD order | — | €4.50 |
 | **Documented total** | Excludes any shipping not visible in the supplied order images | | **€171.50** |
@@ -105,7 +105,7 @@ Target: replace the factory 32 GB M.2 SATA SSD with the refurbished 256 GB Weste
 
 ## Phase 3 — Add 8 TB external storage
 
-Target: connect the 8 TB 3.5-inch SATA HDD through the externally powered ICY BOX IB-1122-U3 USB 3.0 dock.
+Target: connect the 8 TB 3.5-inch SATA HDD through the externally powered ICY BOX IB-1122-U3 USB 3.0 dock and use it as the local media library.
 
 ### Intake and burn-in
 
@@ -124,10 +124,11 @@ Target: connect the 8 TB 3.5-inch SATA HDD through the externally powered ICY BO
 - [ ] Choose the filesystem based on the host platform and recovery requirements.
 - [ ] Mount by UUID rather than `/dev/sdX` device name.
 - [ ] Configure safe behavior when the USB disk is absent at boot.
+- [ ] Keep media-server configuration, database, artwork, and watch-state data separate from the media library.
 - [ ] Record idle/load temperature and verify stable operation during a sustained transfer.
 - [ ] Configure SMART monitoring and alerts if the USB bridge supports them.
 - [ ] Protect the open dock from knocks, dust, accidental removal, and power-button presses.
-- [ ] Define a separate backup target for irreplaceable data; this single disk is not a backup by itself.
+- [ ] Back up configuration and metadata independently; define a separate backup target for any irreplaceable media.
 
 ### Exit criteria
 
@@ -137,17 +138,18 @@ Target: connect the 8 TB 3.5-inch SATA HDD through the externally powered ICY BO
 
 ## Phase 4 — Base homelab platform
 
-This phase will be finalized after the intended workloads are chosen.
+Primary workload: local media serving. The exact operating system and media-server stack remain to be selected.
 
 - [ ] Select the host platform (for example, Proxmox VE or a minimal Linux server).
-- [ ] Define storage roles: boot, virtual machines/containers, application data, and backups.
+- [ ] Define storage roles: system, media library, application configuration/metadata, and backups.
 - [ ] Configure updates, time synchronization, remote administration, and SSH keys.
 - [ ] Establish configuration backups before deploying services.
 - [ ] Add basic monitoring for disk health, temperatures, memory pressure, and availability.
 
 ## Phase 5 — Services and networking
 
-- [ ] Define the first workloads and their resource budgets.
+- [ ] Select the media-server application and decide between native, containerized, or virtual-machine deployment.
+- [ ] Test direct play and transcoding with representative client devices and media formats.
 - [ ] Decide whether additional network interfaces are required.
 - [ ] Document VLANs, addressing, DNS, firewall rules, and remote-access boundaries.
 - [ ] Deploy services one at a time with backup and restore tests.
@@ -157,8 +159,8 @@ This phase will be finalized after the intended workloads are chosen.
 1. What is the exact D3543-A1 board revision and current BIOS version?
 2. Has the mixed Samsung memory pair completed an error-free memory test?
 3. What is the exact model, manufacture date, SMART history, and warranty of the 8 TB HDD?
-4. Will the 8 TB disk hold replaceable media, primary data, backups, or a mixture?
-5. Which homelab workloads are planned?
+4. Which operating system and media-server stack will be used?
+5. Which client devices and codecs must be supported, and will transcoding be required?
 
 ## Known risks
 

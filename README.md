@@ -1,6 +1,6 @@
 # PitcherHomeLab
 
-A compact, low-power homelab built around a Fujitsu FUTRO S940 thin client.
+A compact, low-power local media server built around a Fujitsu FUTRO S940 thin client.
 
 ## Hardware plan
 
@@ -11,7 +11,7 @@ A compact, low-power homelab built around a Fujitsu FUTRO S940 thin client.
 | Processor | Intel Pentium Silver J5005 | Retained |
 | Memory | 4 GB DDR4-2666 SO-DIMM | 16 GB using two Samsung 8 GB DDR4 SO-DIMMs |
 | System storage | 32 GB M.2 SATA SSD | 256 GB Western Digital PC SA530 M.2 SATA SSD |
-| Bulk storage | None | 8 TB 3.5-inch Hitachi/Western Digital SATA HDD |
+| Media storage | None | 8 TB 3.5-inch Hitachi/Western Digital SATA HDD |
 | External storage interface | None | ICY BOX IB-1122-U3 USB 3.0 SATA dock |
 
 See [ROADMAP.md](ROADMAP.md) for the upgrade plan, validation gates, and open decisions.
