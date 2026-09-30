@@ -9,6 +9,7 @@ A compact, low-power local media server built around a Fujitsu FUTRO S940 thin c
 | System | Fujitsu FUTRO S940 | Retained |
 | Mainboard | Expected D3543-A1; revision to be verified | Retained |
 | Processor | Intel Pentium Silver J5005 | Retained |
+| Operating system | Existing installation | Debian 13 `trixie` (stable), kept current through normal updates |
 | Memory | 4 GB DDR4-2666 SO-DIMM | 16 GB using two Samsung 8 GB DDR4 SO-DIMMs |
 | System storage | 32 GB M.2 SATA SSD | 256 GB Western Digital PC SA530 M.2 SATA SSD |
 | Media storage | None | 8 TB 3.5-inch Hitachi/Western Digital SATA HDD |

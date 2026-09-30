@@ -138,9 +138,11 @@ Target: connect the 8 TB 3.5-inch SATA HDD through the externally powered ICY BO
 
 ## Phase 4 — Base homelab platform
 
-Primary workload: local media serving. The exact operating system and media-server stack remain to be selected.
+Primary workload: local media serving on Debian stable. The media-server stack remains to be selected.
 
-- [ ] Select the host platform (for example, Proxmox VE or a minimal Linux server).
+- [x] Select the host operating system: Debian 13 `trixie`, the current stable release; install the latest available point release and apply all updates.
+- [ ] Perform a minimal headless Debian installation on the 256 GB M.2 SATA SSD.
+- [ ] Enable the Debian security repository and establish a regular update policy.
 - [ ] Define storage roles: system, media library, application configuration/metadata, and backups.
 - [ ] Configure updates, time synchronization, remote administration, and SSH keys.
 - [ ] Establish configuration backups before deploying services.
@@ -159,7 +161,7 @@ Primary workload: local media serving. The exact operating system and media-serv
 1. What is the exact D3543-A1 board revision and current BIOS version?
 2. Has the mixed Samsung memory pair completed an error-free memory test?
 3. What is the exact model, manufacture date, SMART history, and warranty of the 8 TB HDD?
-4. Which operating system and media-server stack will be used?
+4. Which media-server application and deployment model will be used?
 5. Which client devices and codecs must be supported, and will transcoding be required?
 
 ## Known risks
@@ -180,3 +182,4 @@ Primary workload: local media serving. The exact operating system and media-serv
 - [Fujitsu FUTRO S940 operating manual](https://support.ts.fujitsu.com/Search/SWP1219904.asp)
 - [Fujitsu D3543/D3544 BIOS manual](https://support.ts.fujitsu.com/Search/SWP1214228.asp)
 - [Fujitsu D3543/D3544 mainboard short description (archived copy)](https://manuals.plus/m/6b89cd729b95e73f1e79652dccd58ca2397b1bbe1c30029b320ac5da416020ee.pdf)
+- [Debian stable release information](https://www.debian.org/releases/stable/)
