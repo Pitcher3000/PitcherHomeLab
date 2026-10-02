@@ -11,11 +11,12 @@ A compact, low-power local media server built around a Fujitsu FUTRO S940 thin c
 | Processor | Intel Pentium Silver J5005 | In service |
 | Operating system | Debian 13 `trixie` (stable), kept current through normal updates | In service |
 | Memory | 16 GB using two Samsung 8 GB DDR4 SO-DIMMs | Installed; extended validation pending |
-| System storage | 256 GB Western Digital PC SA530 M.2 2280 SATA SSD | Installed with a reversible retention workaround |
+| System storage | 256 GB Western Digital PC SA530 M.2 2280 SATA SSD | Installed with an insulated custom standoff; SMART passed |
 | Media storage | 8 TB 3.5-inch Hitachi/Western Digital SATA HDD | Installed through ICY BOX IB-1122-U3 |
 | Auxiliary storage | 1 TB Verbatim Vi550 S3 2.5-inch SATA SSD | Installed in a generic ICY BOX USB enclosure |
+| Cooling | Passive factory cooling with Arctic MX-6 thermal compound | 41°C idle baseline |
 
-The hardware installation was completed on 2026-10-02. Burn-in, health baselines, and long-term stability checks remain tracked in [ROADMAP.md](ROADMAP.md).
+The hardware installation was completed on 2026-10-02. The storage migration, thermal refresh, and initial SMART audit are documented in [BUILD_LOG.md](BUILD_LOG.md). Remaining burn-in and long-term stability checks are tracked in [ROADMAP.md](ROADMAP.md).
 
 ## Project principles
 

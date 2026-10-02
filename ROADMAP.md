@@ -37,17 +37,18 @@ The storage plan now uses a native M.2 SATA replacement, so no NVMe bridge is re
 
 ### M.2 mounting workaround
 
-The factory M.2 mounting hardware uses a fixed, soldered standoff intended for the original shorter module. It could not be repositioned for the 2280 replacement without modifying the motherboard, so the new SSD was secured with a reversible retention workaround.
+The factory M.2 mounting hardware uses a fixed, soldered standoff intended for the original shorter module. It could not be repositioned for the 2280 replacement without modifying the motherboard, so an insulated custom standoff was installed for the new SSD.
 
-The workaround should be inspected after the first thermal cycles and during routine maintenance. The SSD must remain flat, electrically isolated, unobstructed, and firmly seated without placing bending force on the module or connector. A purpose-built non-conductive 2280 retainer is the preferred future refinement if a compatible part becomes available.
+The installed module sits flat and firmly seated with no mechanical flex at the connector pins. The standoff and its insulation should still be inspected during routine maintenance.
 
 ## Phase 0 — Inventory and recovery baseline
 
 - [ ] Photograph the mainboard, M.2 connector, standoffs, installed SSD, power supply label, and board revision label.
 - [ ] Record the BIOS version and current BIOS settings.
-- [ ] Record the existing SSD model, interface, partition layout, and health data.
-- [ ] Back up the existing system or create recovery media.
-- [ ] Run a short baseline test and record idle/load temperatures and power consumption if a meter is available.
+- [x] Record the replacement SSD model, interface, partition layout, and initial health data.
+- [x] Preserve the original system disk while cloning the installation to the replacement SSD.
+- [x] Record a passive idle temperature baseline: 41°C after cleaning the factory thermal interface material and applying Arctic MX-6.
+- [ ] Record load temperatures and power consumption if a meter is available.
 
 ### Exit criteria
 
@@ -94,20 +95,24 @@ Target: replace the factory 32 GB M.2 SATA SSD with the refurbished 256 GB Weste
 ### Preparation and installation
 
 - [x] Select a native M.2 2280 SATA replacement; no NVMe bridge is needed.
-- [ ] Inspect the SSD and verify its part number, capacity, firmware, and SMART data.
-- [ ] Confirm that the refurbished self-encrypting drive is not security-locked; sanitize it before use.
-- [ ] Back up or image the original 32 GB SSD.
-- [ ] Decide between cloning the existing installation and performing a clean installation.
-- [x] Install the 256 GB SSD using the reversible retention workaround.
+- [x] Inspect the SSD and verify its part number, capacity, firmware, and SMART data.
+- [x] Confirm that the refurbished drive is usable and not security-locked.
+- [x] Clone the original system disk block-for-block to the replacement SSD with `dd`.
+- [x] Select an in-place cloned-system migration instead of a clean installation.
+- [x] Install the 256 GB SSD using the insulated custom standoff.
 - [ ] Confirm the SSD is detected consistently in firmware after multiple cold boots.
-- [ ] Install or restore the host operating system.
+- [x] Boot the cloned Debian installation from the replacement SSD.
+- [x] Repair the backup GPT headers at the new disk boundary and expand the `ext4` root filesystem to 237.6 GiB.
 - [ ] Confirm correct partition alignment, TRIM support, and periodic TRIM scheduling.
+- [x] Replace the legacy `sda3` swap partition with a persistent 4 GB `/swapfile`.
+- [x] Remove the orphaned swap UUID from `/etc/fstab`, resolving the 90-second systemd dependency timeout.
 - [ ] Retain the original SSD unchanged until the replacement passes validation.
 
 ### Validation
 
 - [ ] Run the SSD's SMART short and extended self-tests.
-- [ ] Check for media/data-integrity errors, unsafe shutdowns, and abnormal wear indicators.
+- [x] Capture an initial SMART health audit: overall result `PASSED`, no reallocated sectors, runtime bad blocks, reported uncorrectable errors, or interface CRC errors.
+- [x] Record SMART baselines: approximately 96%–97% reported remaining life, 29°C idle, 61°C lifetime maximum, 9,468 power-on hours, and 2,339 power cycles.
 - [ ] Run reboot and cold-boot tests.
 - [ ] Run a sustained storage test while monitoring temperature.
 - [ ] Verify that the recovery image or original SSD can still boot.
@@ -164,10 +169,11 @@ Targets:
 Primary workload: local media serving on Debian stable. The media-server stack remains to be selected.
 
 - [x] Select the host operating system: Debian 13 `trixie`, the current stable release; install the latest available point release and apply all updates.
-- [ ] Perform a minimal headless Debian installation on the 256 GB M.2 SATA SSD.
+- [x] Migrate the existing Debian installation to the 256 GB M.2 SATA SSD and expand it to the full usable capacity.
 - [ ] Enable the Debian security repository and establish a regular update policy.
 - [ ] Define storage roles: system, media library, application configuration/metadata, and backups.
-- [ ] Configure updates, time synchronization, remote administration, and SSH keys.
+- [x] Enable the SSH daemon and verify that it remains enabled across boot targets.
+- [ ] Configure updates, time synchronization, remote administration policy, and SSH keys.
 - [ ] Establish configuration backups before deploying services.
 - [ ] Add basic monitoring for disk health, temperatures, memory pressure, and availability.
 
@@ -197,11 +203,13 @@ Primary workload: local media serving on Debian stable. The media-server stack r
 | Used 8 TB HDD has hidden wear or media damage | Record initial SMART data and complete an extended self-test plus full-surface burn-in during the return window |
 | USB disconnect or dock power loss corrupts data | Use stable cabling and power, mount by UUID, monitor the connection, and maintain backups |
 | Open dock leaves the HDD physically exposed | Place it on a stable, ventilated surface away from impacts, liquids, and accidental removal |
-| Temporary M.2 retention loosens or traps heat | Inspect it after thermal cycles, keep the SSD flat and unobstructed, and replace it with a compatible mechanical retainer when practical |
+| Custom M.2 standoff shifts or its insulation deteriorates | Inspect it during routine maintenance and keep the SSD flat, electrically isolated, and unobstructed |
 | A single 8 TB disk is mistaken for a backup | Keep at least one independent copy of irreplaceable data on another device or at another location |
 | Original installation becomes unbootable | Preserve the original SSD until the new M.2 SATA drive passes cold-boot and recovery tests |
 
 ## Reference documentation
+
+The completed migration and initial health readings are recorded in [BUILD_LOG.md](BUILD_LOG.md).
 
 - [Fujitsu FUTRO S940 specifications](https://www.fujitsu.com/vn/en/products/computing/pc/thin-clients/futro-s940/)
 - [Fujitsu FUTRO S940 operating manual](https://support.ts.fujitsu.com/Search/SWP1219904.asp)
