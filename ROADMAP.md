@@ -22,7 +22,7 @@ The storage plan now uses a native M.2 SATA replacement, so no NVMe bridge is re
 | Item | Identification | Role | Cost |
 | --- | --- | --- | ---: |
 | M.2 SSD | Western Digital PC SA530, 256 GB, M.2 2280 SATA III, `SDATN8Y-256G`, refurbished, HP SPS `L60641-001` | Internal system drive | €28.00 |
-| Hard disk | Hitachi/Western Digital, 8 TB, 3.5-inch, 7,200 RPM, SATA 6 Gb/s; PioParts product `P40100`, 12-month warranty; exact drive model pending label inspection | External media library | €129.00 |
+| Hard disk | HGST HUS728T8TALE6L4, 8 TB, 3.5-inch, 7,200 RPM, SATA 6 Gb/s; PioParts product `P40100`, 12-month warranty | External media library | €129.00 |
 | Dock | ICY BOX IB-1122-U3, 2.5/3.5-inch SATA to USB 3.0, B-stock | Powered USB storage interface | €10.00 |
 | External SSD | Verbatim Vi550 S3, 1 TB, 2.5-inch SATA, rated up to 520 MB/s read and 500 MB/s write; connected through a generic ICY BOX USB enclosure | Role to be selected | Already owned |
 | Shipping shown | SSD order | — | €4.50 |
@@ -133,14 +133,17 @@ Targets:
 
 ### Intake and burn-in
 
-- [ ] Record the full HDD model and serial number from its label.
+- [x] Record the full HDD model: HGST HUS728T8TALE6L4.
+- [ ] Record the HDD serial number privately in the local inventory.
 - [x] Record the 1 TB SSD model: Verbatim Vi550 S3, 2.5-inch SATA, rated up to 520 MB/s read and 500 MB/s write.
-- [ ] Record the SSD serial number and health data; confirm the enclosure negotiates at USB 3.x speed.
+- [x] Record the 1 TB SSD's initial SMART health data.
+- [ ] Record the SSD serial number privately and confirm the enclosure negotiates at USB 3.x speed.
 - [x] Record seller and warranty: PioParts, 12 months.
 - [ ] Verify that the supplied dock power adapter matches the IB-1122-U3 and is correctly rated.
-- [ ] Confirm that the drive reports 8 TB and that SMART passthrough works through the dock.
-- [ ] Save the initial SMART report, including power-on hours, start/stop count, reallocated sectors, pending sectors, and uncorrectable sectors.
-- [ ] Run the SMART extended self-test.
+- [x] Confirm that the HDD reports 8 TB and that attribute and self-test data are available through SMART passthrough.
+- [x] Save the initial SMART reports for the 8 TB HDD and 1 TB SSD.
+- [x] Complete the 8 TB HDD SMART extended self-test without error.
+- [ ] Run SMART self-tests on the 1 TB SSD; none are currently logged.
 - [ ] Run a complete destructive surface/write-read test before placing real data on the disk.
 - [ ] Run all acceptance tests during the return period and retain the invoice for the 12-month warranty.
 - [ ] Reject, return, or make a warranty claim if health data is withheld, capacity is wrong, SMART reports media errors, or the surface test fails.
@@ -153,7 +156,8 @@ Targets:
 - [ ] Give both external filesystems unique labels and document which physical device owns each UUID.
 - [ ] Configure safe behavior when the USB disk is absent at boot.
 - [ ] Keep media-server configuration, database, artwork, and watch-state data separate from the media library.
-- [ ] Record idle/load temperature and verify stable operation during a sustained transfer.
+- [x] Record initial temperatures: 38°C for the 8 TB HDD and 25°C for the 1 TB SSD.
+- [ ] Record load temperatures and verify stable operation during a sustained transfer.
 - [ ] Configure SMART monitoring and alerts if the USB bridge supports them.
 - [ ] Protect the open dock from knocks, dust, accidental removal, and power-button presses.
 - [ ] Back up configuration and metadata independently; define a separate backup target for any irreplaceable media.
@@ -189,7 +193,7 @@ Primary workload: local media serving on Debian stable. The media-server stack r
 
 1. What is the exact D3543-A1 board revision and current BIOS version?
 2. Has the mixed Samsung memory pair completed an error-free memory test?
-3. What is the exact model, manufacture date, SMART history, and warranty of the 8 TB HDD?
+3. What is the manufacture date of the 8 TB HDD, and will it pass a complete surface test?
 4. Which media-server application and deployment model will be used?
 5. What role should the 1 TB external SSD serve?
 6. Which client devices and codecs must be supported, and will transcoding be required?
