@@ -17,7 +17,7 @@ Fujitsu lists the FUTRO S940 with a D3543-A1 Mini-ITX board, a Pentium Silver J5
 
 The storage plan now uses a native M.2 SATA replacement, so no NVMe bridge is required. The exact board identifier should still be recorded for the build inventory.
 
-## Acquired upgrade hardware
+## Installed upgrade hardware
 
 | Item | Identification | Role | Cost |
 | --- | --- | --- | ---: |
@@ -27,6 +27,19 @@ The storage plan now uses a native M.2 SATA replacement, so no NVMe bridge is re
 | External SSD | Verbatim Vi550 S3, 1 TB, 2.5-inch SATA, rated up to 520 MB/s read and 500 MB/s write; connected through a generic ICY BOX USB enclosure | Role to be selected | Already owned |
 | Shipping shown | SSD order | — | €4.50 |
 | **Documented total** | Excludes any shipping not visible in the supplied order images | | **€171.50** |
+
+## Installation update — 2026-10-02
+
+- [x] Install both 8 GB Samsung SO-DIMMs for 16 GB total memory.
+- [x] Install the 256 GB Western Digital PC SA530 M.2 SATA system drive.
+- [x] Connect the 8 TB HDD through the powered ICY BOX IB-1122-U3 dock.
+- [x] Connect the existing 1 TB Verbatim Vi550 S3 through its USB enclosure.
+
+### M.2 mounting workaround
+
+The factory M.2 mounting hardware uses a fixed, soldered standoff intended for the original shorter module. It could not be repositioned for the 2280 replacement without modifying the motherboard, so the new SSD was secured with a reversible retention workaround.
+
+The workaround should be inspected after the first thermal cycles and during routine maintenance. The SSD must remain flat, electrically isolated, unobstructed, and firmly seated without placing bending force on the module or connector. A purpose-built non-conductive 2280 retainer is the preferred future refinement if a compatible part becomes available.
 
 ## Phase 0 — Inventory and recovery baseline
 
@@ -62,7 +75,7 @@ They are not a matched kit, but they share capacity, voltage, rank, and x8 organ
 ### Installation and validation
 
 - [ ] Disconnect power and discharge static electricity.
-- [ ] Replace the existing 4 GB module with the two 8 GB modules.
+- [x] Replace the existing 4 GB module with the two 8 GB modules.
 - [ ] Confirm that the BIOS detects 16 GB.
 - [ ] Boot the intended operating system and confirm that it sees the full capacity.
 - [ ] Run at least one complete memory-test pass; use a longer overnight test before production workloads.
@@ -85,7 +98,8 @@ Target: replace the factory 32 GB M.2 SATA SSD with the refurbished 256 GB Weste
 - [ ] Confirm that the refurbished self-encrypting drive is not security-locked; sanitize it before use.
 - [ ] Back up or image the original 32 GB SSD.
 - [ ] Decide between cloning the existing installation and performing a clean installation.
-- [ ] Install the 256 GB SSD and confirm detection in firmware.
+- [x] Install the 256 GB SSD using the reversible retention workaround.
+- [ ] Confirm the SSD is detected consistently in firmware after multiple cold boots.
 - [ ] Install or restore the host operating system.
 - [ ] Confirm correct partition alignment, TRIM support, and periodic TRIM scheduling.
 - [ ] Retain the original SSD unchanged until the replacement passes validation.
@@ -108,8 +122,9 @@ Target: replace the factory 32 GB M.2 SATA SSD with the refurbished 256 GB Weste
 
 Targets:
 
-- Connect the 8 TB 3.5-inch SATA HDD through the externally powered ICY BOX IB-1122-U3 USB 3.0 dock and use it as the local media library.
-- Assign a role to the existing 1 TB Verbatim Vi550 S3 SSD connected through a generic ICY BOX USB enclosure.
+- [x] Connect the 8 TB 3.5-inch SATA HDD through the externally powered ICY BOX IB-1122-U3 USB 3.0 dock for use as the local media library.
+- [x] Connect the existing 1 TB Verbatim Vi550 S3 SSD through a generic ICY BOX USB enclosure.
+- [ ] Assign the 1 TB SSD's final role.
 
 ### Intake and burn-in
 
@@ -182,6 +197,7 @@ Primary workload: local media serving on Debian stable. The media-server stack r
 | Used 8 TB HDD has hidden wear or media damage | Record initial SMART data and complete an extended self-test plus full-surface burn-in during the return window |
 | USB disconnect or dock power loss corrupts data | Use stable cabling and power, mount by UUID, monitor the connection, and maintain backups |
 | Open dock leaves the HDD physically exposed | Place it on a stable, ventilated surface away from impacts, liquids, and accidental removal |
+| Temporary M.2 retention loosens or traps heat | Inspect it after thermal cycles, keep the SSD flat and unobstructed, and replace it with a compatible mechanical retainer when practical |
 | A single 8 TB disk is mistaken for a backup | Keep at least one independent copy of irreplaceable data on another device or at another location |
 | Original installation becomes unbootable | Preserve the original SSD until the new M.2 SATA drive passes cold-boot and recovery tests |
 
