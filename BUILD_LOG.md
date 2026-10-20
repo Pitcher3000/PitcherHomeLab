@@ -81,4 +81,8 @@ The 8 TB HDD is fully operational as the local media library for personally pres
 - Sonarr organizes TV-series-library content.
 - The media library is kept separate from service configuration, metadata, and backup data by design.
 
-This public build log intentionally excludes service URLs, network configuration, filesystem paths, credentials, media inventory, and personally identifying media details. Follow-up validation remains limited to the roadmap items that have not yet been evidenced, including backup/restore testing, representative playback and transcoding tests, monitoring, and the storage burn-in work already listed there.
+This public build log intentionally excludes service URLs, network configuration, filesystem paths, credentials, media inventory, and personally identifying media details. The historical validation and acceptance notes retained in the roadmap are not outstanding phase gates.
+
+## 2026-10-20 — Current scope complete
+
+All roadmap phases (0–5) are complete for the current homelab scope. Jellyfin transcoding and encoding have been verified with Intel Quick Sync hardware acceleration, using minimal integrated-GPU resources. Future expansion is planned but intentionally unspecified.

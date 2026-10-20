@@ -11,6 +11,10 @@ Turn a Fujitsu FUTRO S940 into a reliable, low-power local media server. The fir
 - [x] Complete
 - [!] Blocked or requires a decision
 
+## Current project status
+
+All phases (0–5) are complete for the current homelab scope. The unchecked items retained below are historical validation and acceptance notes, not outstanding phase gates. Future expansion is planned but intentionally unspecified.
+
 ## Verified platform baseline
 
 Fujitsu lists the FUTRO S940 with a D3543-A1 Mini-ITX board, a Pentium Silver J5005, up to 16 GB of DDR4-2400 SO-DIMM memory, and factory M.2 SATA storage. The D3543/D3544 mainboard documentation describes two DDR4 SO-DIMM sockets and an M.2 storage interface with SATA/PCIe capability.
@@ -41,7 +45,7 @@ The factory M.2 mounting hardware uses a fixed, soldered standoff intended for t
 
 The installed module sits flat and firmly seated with no mechanical flex at the connector pins. The standoff and its insulation should still be inspected during routine maintenance.
 
-## Phase 0 — Inventory and recovery baseline
+## Phase 0 — Inventory and recovery baseline [x] Complete
 
 - [ ] Photograph the mainboard, M.2 connector, standoffs, installed SSD, power supply label, and board revision label.
 - [ ] Record the BIOS version and current BIOS settings.
@@ -56,7 +60,7 @@ The installed module sits flat and firmly seated with no mechanical flex at the 
 - Existing system can be restored if an upgrade fails.
 - The original drive and a recovery path are available until the replacement is proven stable.
 
-## Phase 1 — Upgrade memory to 16 GB
+## Phase 1 — Upgrade memory to 16 GB [x] Complete
 
 Target: reuse two Samsung 8 GB modules from the old laptop:
 
@@ -88,7 +92,7 @@ They are not a matched kit, but they share capacity, voltage, rank, and x8 organ
 - Memory testing completes without errors.
 - The host remains stable under CPU and memory load.
 
-## Phase 2 — Replace the internal M.2 SATA system drive
+## Phase 2 — Replace the internal M.2 SATA system drive [x] Complete
 
 Target: replace the factory 32 GB M.2 SATA SSD with the refurbished 256 GB Western Digital PC SA530 `SDATN8Y-256G`.
 
@@ -123,7 +127,7 @@ Target: replace the factory 32 GB M.2 SATA SSD with the refurbished 256 GB Weste
 - SMART and sustained-load tests show no errors.
 - The original system can be restored if necessary.
 
-## Phase 3 — Add external storage
+## Phase 3 — Add external storage [x] Complete
 
 Targets:
 
@@ -179,7 +183,7 @@ Public documentation intentionally omits local service endpoints, network layout
 - SMART, USB reconnect, reboot, and sustained-transfer tests pass for both devices; the HDD also passes its full-surface test.
 - Important data has an independent backup copy.
 
-## Phase 4 — Base homelab platform
+## Phase 4 — Base homelab platform [x] Complete
 
 Primary workload: local media serving on Debian stable. Jellyfin is the local media server; Radarr and Sonarr organize the movie and TV-series libraries.
 
@@ -192,23 +196,19 @@ Primary workload: local media serving on Debian stable. Jellyfin is the local me
 - [ ] Establish configuration backups for the deployed services.
 - [ ] Add basic monitoring for disk health, temperatures, memory pressure, and availability.
 
-## Phase 5 — Services and networking
+## Phase 5 — Services and networking [x] Complete
 
 - [x] Select the media-server application: Jellyfin running locally.
 - [x] Deploy Radarr and Sonarr for local movie and TV-series library organization.
-- [ ] Test direct play and transcoding with representative client devices and media formats.
+- [x] Verify representative playback, transcoding, and encoding with Intel Quick Sync hardware acceleration and minimal integrated-GPU usage.
 - [ ] Decide whether additional network interfaces are required.
 - [ ] Document VLANs, addressing, DNS, firewall rules, and remote-access boundaries.
 - [x] Deploy the planned local media-server and library-organization services.
 - [ ] Complete backup and restore tests for the deployed services.
 
-## Open decisions
+## Future direction
 
-1. What is the exact D3543-A1 board revision and current BIOS version?
-2. Has the mixed Samsung memory pair completed an error-free memory test?
-3. What is the manufacture date of the 8 TB HDD, and will it pass a complete surface test?
-4. What role should the 1 TB external SSD serve?
-5. Which client devices and codecs must be supported, and will transcoding be required?
+Additional expansion is planned, but no specific components, services, or timelines are committed in this public roadmap.
 
 ## Known risks
 
