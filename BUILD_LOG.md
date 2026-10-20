@@ -69,3 +69,16 @@ Source: `smartctl /dev/sda`
 | Power cycles (ID 12) | 15 |
 
 These readings form the post-migration baseline. Remaining cold-boot, sustained-load, SSD self-test, and periodic monitoring tasks are tracked in [ROADMAP.md](ROADMAP.md).
+
+## 2026-10-20 — Local media-library transition complete
+
+The 8 TB HDD is fully operational as the local media library for personally preserved media, completing the planned storage and media-server transition.
+
+### Service architecture
+
+- Jellyfin runs locally to provide media access.
+- Radarr organizes movie-library content.
+- Sonarr organizes TV-series-library content.
+- The media library is kept separate from service configuration, metadata, and backup data by design.
+
+This public build log intentionally excludes service URLs, network configuration, filesystem paths, credentials, media inventory, and personally identifying media details. Follow-up validation remains limited to the roadmap items that have not yet been evidenced, including backup/restore testing, representative playback and transcoding tests, monitoring, and the storage burn-in work already listed there.

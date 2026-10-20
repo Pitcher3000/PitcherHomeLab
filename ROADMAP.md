@@ -2,7 +2,7 @@
 
 ## Goal
 
-Turn a Fujitsu FUTRO S940 into a reliable, low-power local media server. The first milestone expands memory to 16 GB, replaces the original 32 GB system drive with a 256 GB M.2 SATA SSD, adds an 8 TB external media library, and incorporates an existing 1 TB external SSD.
+Turn a Fujitsu FUTRO S940 into a reliable, low-power local media server. The first milestone expanded memory to 16 GB, replaced the original 32 GB system drive with a 256 GB M.2 SATA SSD, added an 8 TB external media library, and incorporated an existing 1 TB external SSD. The planned storage/media-server transition is complete: personally preserved media is held on the local 8 TB library, Jellyfin provides local access, and Radarr and Sonarr organize movie and TV-series libraries.
 
 ## Status legend
 
@@ -162,6 +162,17 @@ Targets:
 - [ ] Protect the open dock from knocks, dust, accidental removal, and power-button presses.
 - [ ] Back up configuration and metadata independently; define a separate backup target for any irreplaceable media.
 
+### Media-library transition — 2026-10-20
+
+- [x] Put the full 8 TB HDD into service as the local library for personally preserved media.
+- [x] Complete the planned storage/media-server transition.
+- [x] Run Jellyfin locally for media access.
+- [x] Use Radarr to organize movie-library content.
+- [x] Use Sonarr to organize TV-series-library content.
+- [x] Keep service configuration, metadata, and backups separate from the media library design.
+
+Public documentation intentionally omits local service endpoints, network layout, filesystem paths, credentials, media inventory, and any personally identifying media details.
+
 ### Exit criteria
 
 - The full 8 TB HDD and 1 TB SSD capacities are available and mount consistently.
@@ -170,33 +181,34 @@ Targets:
 
 ## Phase 4 — Base homelab platform
 
-Primary workload: local media serving on Debian stable. The media-server stack remains to be selected.
+Primary workload: local media serving on Debian stable. Jellyfin is the local media server; Radarr and Sonarr organize the movie and TV-series libraries.
 
 - [x] Select the host operating system: Debian 13 `trixie`, the current stable release; install the latest available point release and apply all updates.
 - [x] Migrate the existing Debian installation to the 256 GB M.2 SATA SSD and expand it to the full usable capacity.
 - [ ] Enable the Debian security repository and establish a regular update policy.
-- [ ] Define storage roles: system, media library, application configuration/metadata, and backups.
+- [x] Define storage roles: system, local media library, application configuration/metadata, and backups.
 - [x] Enable the SSH daemon and verify that it remains enabled across boot targets.
 - [ ] Configure updates, time synchronization, remote administration policy, and SSH keys.
-- [ ] Establish configuration backups before deploying services.
+- [ ] Establish configuration backups for the deployed services.
 - [ ] Add basic monitoring for disk health, temperatures, memory pressure, and availability.
 
 ## Phase 5 — Services and networking
 
-- [ ] Select the media-server application and decide between native, containerized, or virtual-machine deployment.
+- [x] Select the media-server application: Jellyfin running locally.
+- [x] Deploy Radarr and Sonarr for local movie and TV-series library organization.
 - [ ] Test direct play and transcoding with representative client devices and media formats.
 - [ ] Decide whether additional network interfaces are required.
 - [ ] Document VLANs, addressing, DNS, firewall rules, and remote-access boundaries.
-- [ ] Deploy services one at a time with backup and restore tests.
+- [x] Deploy the planned local media-server and library-organization services.
+- [ ] Complete backup and restore tests for the deployed services.
 
 ## Open decisions
 
 1. What is the exact D3543-A1 board revision and current BIOS version?
 2. Has the mixed Samsung memory pair completed an error-free memory test?
 3. What is the manufacture date of the 8 TB HDD, and will it pass a complete surface test?
-4. Which media-server application and deployment model will be used?
-5. What role should the 1 TB external SSD serve?
-6. Which client devices and codecs must be supported, and will transcoding be required?
+4. What role should the 1 TB external SSD serve?
+5. Which client devices and codecs must be supported, and will transcoding be required?
 
 ## Known risks
 

@@ -12,11 +12,18 @@ A compact, low-power local media server built around a Fujitsu FUTRO S940 thin c
 | Operating system | Debian 13 `trixie` (stable), kept current through normal updates | In service |
 | Memory | 16 GB using two Samsung 8 GB DDR4 SO-DIMMs | Installed; extended validation pending |
 | System storage | 256 GB Western Digital PC SA530 M.2 2280 SATA SSD | Installed with an insulated custom standoff; SMART passed |
-| Media storage | 8 TB HGST HUS728T8TALE6L4 3.5-inch 7,200 RPM SATA HDD | Installed through ICY BOX IB-1122-U3; SMART extended test passed |
+| Media storage | 8 TB HGST HUS728T8TALE6L4 3.5-inch 7,200 RPM SATA HDD | Fully operational local media library; SMART extended test passed |
 | Auxiliary storage | 1 TB Verbatim Vi550 S3 2.5-inch SATA SSD | Installed in a generic ICY BOX USB enclosure; initial SMART attributes healthy |
 | Cooling | Passive factory cooling with Arctic MX-6 thermal compound | 41°C idle baseline |
 
-The hardware installation was completed on 2026-10-02. The storage migration, thermal refresh, and initial SMART audit are documented in [BUILD_LOG.md](BUILD_LOG.md). Remaining burn-in and long-term stability checks are tracked in [ROADMAP.md](ROADMAP.md).
+The hardware installation was completed on 2026-10-02. The planned storage and local media-server transition was completed on 2026-10-20: the 8 TB library is in use for personally preserved media, Jellyfin provides local media access, and Radarr and Sonarr organize movie and TV-series libraries. The storage migration, thermal refresh, service architecture, and initial SMART audit are documented in [BUILD_LOG.md](BUILD_LOG.md). Remaining burn-in and long-term stability checks are tracked in [ROADMAP.md](ROADMAP.md).
+
+## Media-service architecture
+
+- The 8 TB HDD is the local library for personally preserved media.
+- Jellyfin runs locally to provide access to that library.
+- Radarr manages movie organization and Sonarr manages TV-series organization into their respective library categories.
+- Media files remain separate from service configuration, metadata, and backup data; this repository deliberately does not publish service endpoints, network layout, library paths, credentials, or media inventory.
 
 ## Project principles
 
