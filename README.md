@@ -24,6 +24,7 @@ The hardware installation was completed on 2026-10-02. The planned storage and l
 - Jellyfin runs locally to provide access to that library.
 - Radarr manages movie organization and Sonarr manages TV-series organization into their respective library categories.
 - Intel Quick Sync hardware acceleration supports working transcoding and encoding with minimal integrated-GPU usage.
+- A dedicated 10 m Cat6 Ethernet cable, rated for gigabit networking, replaces the former 100 Mbit/s 2.4 GHz repeater bridge.
 - Media files remain separate from service configuration, metadata, and backup data; this repository deliberately does not publish service endpoints, network layout, library paths, credentials, or media inventory.
 
 ## Project principles

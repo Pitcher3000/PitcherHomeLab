@@ -94,3 +94,7 @@ The two installed 8 GB DDR4 SO-DIMMs are compatible and fully operational at the
 ### Storage validation
 
 The refurbished 256 GB SATA system SSD has passed validation and is not security-locked. The 8 TB media HDD is operational; its observed wear is minimal, and its previously recorded SMART extended self-test completed without error. The resolved SSD-lock and HDD-wear risks have been removed from the active risk register.
+
+### Network uplink
+
+The former 100 Mbit/s 2.4 GHz repeater bridge has been replaced with a dedicated 10 m Cat6 Ethernet cable rated for gigabit networking. This improves the physical uplink without disclosing local addressing, service endpoints, or network topology.

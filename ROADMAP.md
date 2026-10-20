@@ -201,14 +201,14 @@ Primary workload: local media serving on Debian stable. Jellyfin is the local me
 - [x] Select the media-server application: Jellyfin running locally.
 - [x] Deploy Radarr and Sonarr for local movie and TV-series library organization.
 - [x] Verify representative playback, transcoding, and encoding with Intel Quick Sync hardware acceleration and minimal integrated-GPU usage.
-- [ ] Decide whether additional network interfaces are required.
+- [x] Replace the 100 Mbit/s 2.4 GHz repeater bridge with a dedicated 10 m Cat6 Ethernet cable rated for gigabit networking.
 - [ ] Document VLANs, addressing, DNS, firewall rules, and remote-access boundaries.
 - [x] Deploy the planned local media-server and library-organization services.
 - [ ] Complete backup and restore tests for the deployed services.
 
 ## Future direction
 
-Additional expansion is planned, but no specific components, services, or timelines are committed in this public roadmap.
+Additional expansion is planned, but no specific components, services, network topology, or timelines are committed in this public roadmap.
 
 ## Known risks
 
