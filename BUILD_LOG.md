@@ -86,3 +86,11 @@ This public build log intentionally excludes service URLs, network configuration
 ## 2026-10-20 — Current scope complete
 
 All roadmap phases (0–5) are complete for the current homelab scope. Jellyfin transcoding and encoding have been verified with Intel Quick Sync hardware acceleration, using minimal integrated-GPU resources. Future expansion is planned but intentionally unspecified.
+
+### Memory validation
+
+The two installed 8 GB DDR4 SO-DIMMs are compatible and fully operational at the CPU-supported DDR4-2400 rate. The prior mixed-memory compatibility and stability risk is resolved and has been removed from the active risk register.
+
+### Storage validation
+
+The refurbished 256 GB SATA system SSD has passed validation and is not security-locked. The 8 TB media HDD is operational; its observed wear is minimal, and its previously recorded SMART extended self-test completed without error. The resolved SSD-lock and HDD-wear risks have been removed from the active risk register.

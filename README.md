@@ -10,9 +10,9 @@ A compact, low-power local media server built around a Fujitsu FUTRO S940 thin c
 | Mainboard | Expected D3543-A1; revision to be verified | In service |
 | Processor | Intel Pentium Silver J5005 | In service |
 | Operating system | Debian 13 `trixie` (stable), kept current through normal updates | In service |
-| Memory | 16 GB using two Samsung 8 GB DDR4 SO-DIMMs | Installed; extended validation pending |
-| System storage | 256 GB Western Digital PC SA530 M.2 2280 SATA SSD | Installed with an insulated custom standoff; SMART passed |
-| Media storage | 8 TB HGST HUS728T8TALE6L4 3.5-inch 7,200 RPM SATA HDD | Fully operational local media library; SMART extended test passed |
+| Memory | 16 GB using two Samsung 8 GB DDR4 SO-DIMMs | Fully operational at the CPU-supported DDR4-2400 rate |
+| System storage | 256 GB Western Digital PC SA530 M.2 2280 SATA SSD | Passed, unlocked, and in service with an insulated custom standoff |
+| Media storage | 8 TB HGST HUS728T8TALE6L4 3.5-inch 7,200 RPM SATA HDD | Fully operational local media library; SMART extended test passed and observed wear is minimal |
 | Auxiliary storage | 1 TB Verbatim Vi550 S3 2.5-inch SATA SSD | Installed in a generic ICY BOX USB enclosure; initial SMART attributes healthy |
 | Cooling | Passive factory cooling with Arctic MX-6 thermal compound | 41°C idle baseline |
 

@@ -67,14 +67,14 @@ Target: reuse two Samsung 8 GB modules from the old laptop:
 - `M471A1K43CB1-CTD`: DDR4-2666, 8 GB, 1Rx8
 - `M471A1K43EB1-CWE`: DDR4-3200, 8 GB, 1Rx8
 
-They are not a matched kit, but they share capacity, voltage, rank, and x8 organization. Both should run at the S940 platform limit of DDR4-2400 if their SPD profiles negotiate correctly.
+They are not a matched kit, but they share capacity, voltage, rank, and x8 organization. The installed pair is fully operational at the S940 platform and CPU-supported DDR4-2400 rate.
 
 ### Compatibility checklist
 
 - [ ] Both modules are 260-pin DDR4 SO-DIMMs, not desktop DIMMs.
 - [ ] Modules are unbuffered, non-ECC, and rated for 1.2 V.
 - [x] Both candidate modules are 8 GB Samsung DDR4 SO-DIMMs with compatible basic characteristics.
-- [ ] Confirm that the mixed pair trains at DDR4-2400 and remains error-free.
+- [x] Confirm that the mixed pair trains at DDR4-2400 and operates reliably.
 - [ ] Inspect and clean the modules and slots before installation.
 
 ### Installation and validation
@@ -100,7 +100,7 @@ Target: replace the factory 32 GB M.2 SATA SSD with the refurbished 256 GB Weste
 
 - [x] Select a native M.2 2280 SATA replacement; no NVMe bridge is needed.
 - [x] Inspect the SSD and verify its part number, capacity, firmware, and SMART data.
-- [x] Confirm that the refurbished drive is usable and not security-locked.
+- [x] Confirm that the refurbished drive is usable, passed validation, and is not security-locked.
 - [x] Clone the original system disk block-for-block to the replacement SSD with `dd`.
 - [x] Select an in-place cloned-system migration instead of a clean installation.
 - [x] Install the 256 GB SSD using the insulated custom standoff.
@@ -214,9 +214,6 @@ Additional expansion is planned, but no specific components, services, or timeli
 
 | Risk | Mitigation |
 | --- | --- |
-| Used laptop RAM is incompatible or unstable | Check labels/specifications and complete memory testing before deployment |
-| Refurbished SSD is locked or excessively worn | Check security state and SMART data, sanitize it, and keep the original SSD until validation passes |
-| Used 8 TB HDD has hidden wear or media damage | Record initial SMART data and complete an extended self-test plus full-surface burn-in during the return window |
 | USB disconnect or dock power loss corrupts data | Use stable cabling and power, mount by UUID, monitor the connection, and maintain backups |
 | Open dock leaves the HDD physically exposed | Place it on a stable, ventilated surface away from impacts, liquids, and accidental removal |
 | Custom M.2 standoff shifts or its insulation deteriorates | Inspect it during routine maintenance and keep the SSD flat, electrically isolated, and unobstructed |
