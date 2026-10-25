@@ -2,7 +2,7 @@
 
 ## Goal
 
-Turn a Fujitsu FUTRO S940 into a reliable, low-power local media server. The first milestone expanded memory to 16 GB, replaced the original 32 GB system drive with a 256 GB M.2 SATA SSD, added an 8 TB external media library, and incorporated an existing 1 TB external SSD. The planned storage/media-server transition is complete: personally preserved media is held on the local 8 TB library, Jellyfin provides local access, and Radarr and Sonarr organize movie and TV-series libraries.
+Turn a Fujitsu FUTRO S940 into a reliable, low-power local media server. The first milestone expanded memory to 16 GB, replaced the original 32 GB system drive with a 256 GB M.2 SATA SSD, added an 8 TB external media library, and incorporated an existing 1 TB external SSD. The planned storage/media-server transition is complete: personally preserved media is held on the local 8 TB library, Jellyfin provides local access, and tiered storage orchestration keeps the library organized.
 
 ## Status legend
 
@@ -173,8 +173,7 @@ Targets:
 - [x] Put the full 8 TB HDD into service as the local library for personally preserved media.
 - [x] Complete the planned storage/media-server transition.
 - [x] Run Jellyfin locally for media access.
-- [x] Use Radarr to organize movie-library content.
-- [x] Use Sonarr to organize TV-series-library content.
+- [x] Organize library content with tiered storage orchestration.
 - [x] Keep service configuration, metadata, and backups separate from the media library design.
 
 Public documentation intentionally omits local service endpoints, network layout, filesystem paths, credentials, media inventory, and any personally identifying media details.
@@ -187,7 +186,7 @@ Public documentation intentionally omits local service endpoints, network layout
 
 ## Phase 4 — Base homelab platform [x] Complete
 
-Primary workload: local media serving on Debian stable. Jellyfin is the local media server; Radarr and Sonarr organize the movie and TV-series libraries.
+Primary workload: local media serving on Debian stable. Jellyfin is the local media server; tiered storage orchestration keeps the library organized.
 
 - [x] Select the host operating system: Debian 13 `trixie`, the current stable release; install the latest available point release and apply all updates.
 - [x] Migrate the existing Debian installation to the 256 GB M.2 SATA SSD and expand it to the full usable capacity.
@@ -201,7 +200,7 @@ Primary workload: local media serving on Debian stable. Jellyfin is the local me
 ## Phase 5 — Services and networking [x] Complete
 
 - [x] Select the media-server application: Jellyfin running locally.
-- [x] Deploy Radarr and Sonarr for local movie and TV-series library organization.
+- [x] Deploy tiered storage orchestration for local library organization.
 - [x] Verify representative playback, transcoding, and encoding with Intel Quick Sync hardware acceleration and minimal integrated-GPU usage.
 - [x] Replace the 100 Mbit/s 2.4 GHz repeater bridge with a dedicated 10 m Cat6 Ethernet cable rated for gigabit networking.
 - [ ] Document VLANs, addressing, DNS, firewall rules, and remote-access boundaries.

@@ -77,8 +77,7 @@ The 8 TB HDD is fully operational as the local media library for personally pres
 ### Service architecture
 
 - Jellyfin runs locally to provide media access.
-- Radarr organizes movie-library content.
-- Sonarr organizes TV-series-library content.
+- Tiered storage orchestration organizes library content across the scratch and archive tiers.
 - The media library is kept separate from service configuration, metadata, and backup data by design.
 
 This public build log intentionally excludes service URLs, network configuration, filesystem paths, credentials, media inventory, and personally identifying media details. The historical validation and acceptance notes retained in the roadmap are not outstanding phase gates.
