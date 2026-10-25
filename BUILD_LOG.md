@@ -98,3 +98,37 @@ The refurbished 256 GB SATA system SSD has passed validation and is not security
 ### Network uplink
 
 The former 100 Mbit/s 2.4 GHz repeater bridge has been replaced with a dedicated 10 m Cat6 Ethernet cable rated for gigabit networking. This improves the physical uplink without disclosing local addressing, service endpoints, or network topology.
+
+## 2026-10-25 — Public site update: v1.1 case study, Lab simulator, and content sanitization
+
+The public project site was updated through the Onepage beta MCP. This entry records what changed on the site; it does not change the hardware or service baseline above.
+
+### Published content
+
+- **v1.1 case study:** "Engineering a resilient, frontier-model-governed homelab", published as a Releases entry (Phase 6 — Hardening and AI operations). It covers four design areas:
+  - zero-trust remote access: outbound-only tunnels, OIDC identity, and FIDO2 passkeys instead of forwarded router ports
+  - three-tier storage: an M.2 SATA system tier, a 1 TB SSD scratch tier for transcode and staging writes, and the 8 TB HDD archive tier
+  - Intel Quick Sync transcoding on the J5005's UHD Graphics 605
+  - out-of-band AI operations: tool-less conversational models, kept apart from an allow-listed FastMCP operations server
+- **Lab page (`/lab`):** an interactive, sanitized replica of the control plane with:
+  - simulated telemetry gauges (CPU load, core temperature, memory, scratch-SSD endurance) seeded from real host baselines
+  - a service-health grid in seven groups: edge access, media engine, transcode acceleration, storage orchestration, SMART health monitoring, AI operations, and control plane
+  - event simulators for a transcode burst, SMART diagnostics, and a FIDO2 sign-in, each streaming console output
+  - a knowledge base with three runbooks: KB-01 relying-party alignment behind reverse proxies, KB-02 scratch-buffer wear-leveling, and KB-03 sandboxed agent architecture
+- **Navigation:** the shared header now links Hardware, Roadmap, Releases, and Lab. Anchor links use `/#…` so they work from every page.
+
+### Sanitization rules applied
+
+- Service groupings were derived from the running container list and host telemetry, read through the homelab MCP in read-only mode. Configuration reads through that MCP return only redacted summaries.
+- Download, indexing, scraping, and personal side-project services are omitted from all public pages.
+- Third-party library-organization tool names were removed from the home-page specs table, the home-page SEO description, and the v1.0 release entry. They were replaced with the same abstracted descriptions the Lab page uses: local streaming media server, tiered storage orchestration, and archive tier.
+- Every hostname, address, and identifier on the site is a documentation placeholder: `example.com`, `idp.example.com`, `auth.internal.corp`, RFC 5737 `192.0.2.x`, and `client_id=<redacted>`.
+- After publishing, the live HTML of every page was scanned for restricted terms; none were found.
+
+### Site template fixes
+
+- Release pages now show the release date as `YYYY-MM-DD` instead of a raw ISO timestamp.
+- The Lab page's above-the-fold content renders before JavaScript loads. The sandbox status pill now wraps at phone widths.
+- Shared site components: the button component can act as a click button, and the status pill gained an optional wrapping mode. Existing uses are unchanged.
+
+Open item: the v1.1 entry has no cover image yet, so the site shows a placeholder.
