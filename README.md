@@ -27,6 +27,10 @@ The hardware installation was completed on 2026-10-02. The planned storage and l
 - A dedicated 10 m Cat6 Ethernet cable, rated for gigabit networking, replaces the former 100 Mbit/s 2.4 GHz repeater bridge.
 - Media files remain separate from service configuration, metadata, and backup data; this repository deliberately does not publish service endpoints, network layout, library paths, credentials, or media inventory.
 
+## Public site
+
+The build is also published at [lewis.support](https://lewis.support), with the hardware table, roadmap timeline, and release notes. The [Lab page](https://lewis.support/lab) is an interactive, sanitized simulator of the control plane: telemetry gauges, a service-health grid, event simulators, and a runbook knowledge base. Every hostname and address on the site is a documentation placeholder. Site changes are recorded in [BUILD_LOG.md](BUILD_LOG.md).
+
 ## Project principles
 
 - Prefer reversible upgrades and documented test results.

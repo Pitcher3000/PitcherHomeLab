@@ -15,6 +15,8 @@ Turn a Fujitsu FUTRO S940 into a reliable, low-power local media server. The fir
 
 All phases (0–5) are complete for the current homelab scope. The unchecked items retained below are historical validation and acceptance notes, not outstanding phase gates. Future expansion is planned but intentionally unspecified.
 
+On 2026-10-25 a Phase 6 case study (hardening and AI operations) and an interactive Lab simulator were published on the public site; see the matching entry in [BUILD_LOG.md](BUILD_LOG.md).
+
 ## Verified platform baseline
 
 Fujitsu lists the FUTRO S940 with a D3543-A1 Mini-ITX board, a Pentium Silver J5005, up to 16 GB of DDR4-2400 SO-DIMM memory, and factory M.2 SATA storage. The D3543/D3544 mainboard documentation describes two DDR4 SO-DIMM sockets and an M.2 storage interface with SATA/PCIe capability.
