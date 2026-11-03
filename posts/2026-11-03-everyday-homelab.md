@@ -2,6 +2,8 @@
 
 Published: 2026-11-03
 
+![Concept illustration of everyday homelab services](assets/everyday-homelab-cover.png)
+
 Notes, tasks and PDF tools join the lab, alongside private Git hosting, per-device DNS filtering and verified MCP access. A KB-backed update on what is running and what still needs work.
 
 The latest additions make the fanless Fujitsu FUTRO S940 useful beyond its original role: a place to keep notes, manage tasks, work with PDFs and host private Git repositories. This update draws on the private knowledge base, reviewed on 3 November 2026, with fresh read-only checks of the relevant running services.

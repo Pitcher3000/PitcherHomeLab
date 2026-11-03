@@ -144,3 +144,7 @@ Published [v1.2 — A more useful everyday homelab](https://lewis.support/releas
 - Browser checks confirmed the post appears first in Releases, renders its full content, and Home returns from the post to the landing page. Phone-width visual check at 375 px passed.
 
 The article source and CMS payload are in `posts/`; the shared header snapshot is in `site/header/`. These are versioned sources; GitHub does not automatically deploy them into Onepage.
+
+### v1.2 cover correction
+
+Replaced the empty article cover placeholder with a generated conceptual illustration of notes, tasks, documents, private Git and DNS security around a compact home server. Uploaded the image into Onepage's media library, set the CMS cover with descriptive alt text and republished the document. Verified the actual image renders in the live post. The image and generation prompt are versioned under `posts/assets/`, and the article's CMS JSON includes the cover locator.
