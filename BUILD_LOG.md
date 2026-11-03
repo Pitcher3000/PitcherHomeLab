@@ -131,3 +131,16 @@ The public project site was updated through the Onepage beta MCP. This entry rec
 - Shared site components: the button component can act as a click button, and the status pill gained an optional wrapping mode. Existing uses are unchanged.
 
 Open item: the v1.1 entry has no cover image yet, so the site shows a placeholder.
+
+## 2026-11-03 — v1.2 everyday services and blog navigation
+
+Published [v1.2 — A more useful everyday homelab](https://lewis.support/releases/v12-a-more-useful-everyday-homelab) through the Onepage MCP after reviewing the private KB over SSH.
+
+- Covers Trilium Notes, Vikunja and Stirling-PDF (KB installation date: 2026-11-01), private Forgejo hosting, per-device Pi-hole profiles, and the documented OAuth/bearer MCP verification.
+- Fresh read-only checks: the three new application roots returned HTTP 200; Trilium, Stirling-PDF, Vikunja's database, Forgejo and Pi-hole reported healthy containers. Vikunja's application container was running. Availability checks are not end-to-end feature or restore tests.
+- Historical functional tests are explicitly attributed to the KB or owner reports. Nightly/off-site backups and restore testing are not claimed complete.
+- The article omits download/indexing services, piracy-related material, private endpoints, network addresses, credentials and internal paths.
+- Fixed the shared header: brand link returns to `/`; an explicit Home link stays visible when the main navigation is hidden at mobile widths. Both use `_top`, and keyboard focus outlines were added. Onepage successfully compiled the changes and published the shared header across all four existing pages.
+- Browser checks confirmed the post appears first in Releases, renders its full content, and Home returns from the post to the landing page. Phone-width visual check at 375 px passed.
+
+The article source and CMS payload are in `posts/`; the shared header snapshot is in `site/header/`. These are versioned sources; GitHub does not automatically deploy them into Onepage.

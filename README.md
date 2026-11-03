@@ -39,3 +39,7 @@ The build is also published at [lewis.support](https://lewis.support), with the 
 - Measure stability, temperatures, power use, and storage performance after each phase.
 - Treat a single 8 TB disk as capacity, not as a backup.
 - Prefer reversible installation workarounds over permanent motherboard modification.
+
+## Everyday services update
+
+The [v1.2 update](https://lewis.support/releases/v12-a-more-useful-everyday-homelab) covers notes, tasks, PDF tools, private Git hosting, per-device DNS filtering and MCP authentication. Read the [versioned article](posts/2026-11-03-everyday-homelab.md) for the dated checks and remaining recovery work. The blog header now includes a Home link at mobile widths; its Onepage source snapshot is in [site/header](site/header/).

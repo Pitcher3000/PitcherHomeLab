@@ -1,0 +1,105 @@
+{
+  "dependencies": {},
+  "onepage": {
+    "control": {
+      "brand": {
+        "title": "Brand",
+        "type": "text",
+        "default": "PitcherHomeLab",
+        "tab": "content",
+        "group": "root"
+      },
+      "brandHref": {
+        "title": "Home URL",
+        "type": "text",
+        "default": "/",
+        "tab": "content",
+        "group": "root"
+      },
+      "homeLabel": {
+        "title": "Home link label",
+        "type": "text",
+        "default": "Home",
+        "tab": "content",
+        "group": "root"
+      },
+      "host": {
+        "title": "Host label",
+        "type": "text",
+        "default": "doniserver · online",
+        "tab": "content",
+        "group": "root"
+      },
+      "links": {
+        "title": "Links",
+        "type": "array",
+        "tab": "content",
+        "group": "root",
+        "items": {
+          "label": {
+            "title": "Label",
+            "type": "text",
+            "default": "Link"
+          },
+          "href": {
+            "title": "URL",
+            "type": "text",
+            "default": "#"
+          }
+        },
+        "default": [
+          {
+            "label": "Hardware",
+            "href": "/#specs"
+          },
+          {
+            "label": "Roadmap",
+            "href": "/#roadmap"
+          },
+          {
+            "label": "Releases",
+            "href": "/releases"
+          },
+          {
+            "label": "Lab",
+            "href": "/lab"
+          }
+        ]
+      },
+      "ctaText": {
+        "title": "Button text",
+        "type": "text",
+        "default": "GitHub",
+        "tab": "content",
+        "group": "cta"
+      },
+      "ctaLink": {
+        "title": "Button link",
+        "type": "text",
+        "default": "https://github.com/Pitcher3000/PitcherHomeLab",
+        "tab": "content",
+        "group": "cta"
+      },
+      "bg": {
+        "title": "Background",
+        "type": "color",
+        "default": "black",
+        "tab": "styles",
+        "group": "root",
+        "auto": false
+      },
+      "fullHeight": {
+        "title": "Full height",
+        "type": "checkbox",
+        "default": false,
+        "tab": "layout",
+        "group": "root"
+      }
+    },
+    "group": {
+      "cta": {
+        "title": "Button"
+      }
+    }
+  }
+}
