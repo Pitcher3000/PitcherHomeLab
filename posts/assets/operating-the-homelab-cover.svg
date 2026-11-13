@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 810" width="1440" height="810" role="img" aria-labelledby="title desc">
+  <title id="title">PitcherHomeLab v1.3: A lab that's easier to run</title>
+  <desc id="desc">A stylized compact server connects to recipe planning, a searchable knowledge base, and encrypted backup snapshots.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#0d1724"/><stop offset="1" stop-color="#122c3a"/></linearGradient>
+    <linearGradient id="panel" x2="1" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#214052"/><stop offset="1" stop-color="#112433"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 H 0 V 40" fill="none" stroke="#80a6b5" stroke-opacity=".13"/></pattern>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1440v810H0z"/>
+  <path fill="url(#grid)" d="M0 0h1440v810H0z"/>
+  <path d="M86 98H1354M86 711H1354" stroke="#3d5d6c" stroke-width="2"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="22" font-weight="bold" letter-spacing="3">
+    <text x="88" y="75" fill="#82dfc6">PITCHERHOMELAB</text>
+    <text x="1352" y="75" text-anchor="end" fill="#c1d0d7">RELEASE 1.3</text>
+    <text x="88" y="754" fill="#b5cad2" font-size="18">13 NOVEMBER 2026</text>
+    <text x="1352" y="754" text-anchor="end" fill="#82dfc6" font-size="18">HOME OPERATIONS</text>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#f3f8fa" font-size="84" font-weight="bold" letter-spacing="-3">
+    <text x="83" y="349">A lab that’s</text>
+    <text x="83" y="446">easier to run</text>
+  </g>
+  <text x="88" y="511" fill="#b5cad2" font-family="Arial, sans-serif" font-size="25">Kitchen tools, searchable runbooks, off-site backups.</text>
+  <g fill="none" stroke="#67aaad" stroke-width="2">
+    <path d="M1078 405H1138Q1164 405 1164 380V230H1210"/><path d="M1078 405H1210"/><path d="M1078 405H1138Q1164 405 1164 430V580H1210"/>
+  </g>
+  <g fill="#83e0c6">
+    <circle cx="1164" cy="405" r="5"/><circle cx="1210" cy="230" r="5"/><circle cx="1210" cy="405" r="5"/><circle cx="1210" cy="580" r="5"/>
+  </g>
+  <g>
+    <rect x="795" y="265" width="280" height="280" rx="25" fill="url(#panel)" stroke="#5892a1" stroke-width="2"/>
+    <path d="M821 289h228v231H821z" fill="none" stroke="#426779" stroke-width="2" stroke-dasharray="5 6"/>
+    <g fill="#102330" stroke="#7bb4be" stroke-width="2">
+      <rect x="847" y="323" width="176" height="49" rx="8"/>
+      <rect x="847" y="381" width="176" height="49" rx="8"/>
+      <rect x="847" y="439" width="176" height="49" rx="8"/>
+    </g>
+    <g fill="#83e0c6"><circle cx="869" cy="348" r="4"/><circle cx="869" cy="406" r="4"/><circle cx="869" cy="464" r="4"/></g>
+    <path d="M967 348h37m-37 58h37m-37 58h37" fill="none" stroke="#6b9ca9" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g fill="#142e3d" stroke="#5892a1" stroke-width="2">
+    <rect x="1210" y="172" width="144" height="116" rx="14"/>
+    <rect x="1210" y="347" width="144" height="116" rx="14"/>
+    <rect x="1210" y="522" width="144" height="116" rx="14"/>
+  </g>
+  <g fill="none" stroke="#8ee6cf" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1267 192v16q0 10 10 10t10-10v-16m-10 0v40m27-40q-9 5-9 20h9m0-20v40"/>
+    <path d="M1263 369h13l7 6 7-6h13v32h-13l-7 6-7-6h-13zm20 6v32"/>
+    <path d="M1261 555q0-10 10-10h23q10 0 10 10v24h-43zm0 13h43m-37 5h3m24 0h3"/>
+  </g>
+  <g font-family="Menlo, Consolas, monospace" font-weight="bold" font-size="14" text-anchor="middle" fill="#c1d0d7">
+    <text x="1282" y="264">KITCHEN</text><text x="1282" y="439">RUNBOOKS</text><text x="1282" y="614">BACKUPS</text>
+  </g>
+</svg>

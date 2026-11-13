@@ -148,3 +148,15 @@ The article source and CMS payload are in `posts/`; the shared header snapshot i
 ### v1.2 cover correction
 
 Replaced the empty article cover placeholder with a generated conceptual illustration of notes, tasks, documents, private Git and DNS security around a compact home server. Uploaded the image into Onepage's media library, set the CMS cover with descriptive alt text and republished the document. Verified the actual image renders in the live post. The image and generation prompt are versioned under `posts/assets/`, and the article's CMS JSON includes the cover locator.
+
+## 2026-11-13 — v1.3 home services and recovery
+
+The [v1.3 release](https://lewis.support/releases/v13-a-lab-thats-easier-to-run) documents:
+
+- The private knowledge base’s topic categories, full-text search, narrow-screen layout, preserved links, and dated change log.
+- Mealie and Grocy, with successful local availability checks and remote identity challenges. Notes, tasks, and PDF tools also returned an identity challenge.
+- Remote MCP checks: an unauthenticated request was rejected, a read-only authenticated host-status call succeeded, and the legacy transport remained closed. The original OAuth renewal result is recorded separately from these current checks.
+- A weekly encrypted Restic backup job. The 13 November run completed and the logs show database snapshots for the two kitchen apps. Vaultwarden's earlier backup is recorded in the private KB. A full restore drill is still pending.
+- Container DNS recovery and additional Docker network capacity. The imported shopping-list sync remains inactive pending setup and testing.
+
+The [article source](posts/2026-11-13-operating-the-homelab.md), CMS payload, and cover are versioned in `posts/`. The private KB retains the operational details.

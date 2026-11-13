@@ -17,6 +17,8 @@ All phases (0–5) are complete for the current homelab scope. The unchecked ite
 
 On 2026-10-25 a Phase 6 case study (hardening and AI operations) and an interactive Lab simulator were published on the public site; see the matching entry in [BUILD_LOG.md](BUILD_LOG.md).
 
+The [v1.3 release](https://lewis.support/releases/v13-a-lab-thats-easier-to-run) records later Phase 6 work: household apps, searchable runbooks, and scheduled off-site snapshots. Testing the shopping-list integration and a full restore are follow-ups for this expansion. See the 13 November entry in [BUILD_LOG.md](BUILD_LOG.md).
+
 ## Verified platform baseline
 
 Fujitsu lists the FUTRO S940 with a D3543-A1 Mini-ITX board, a Pentium Silver J5005, up to 16 GB of DDR4-2400 SO-DIMM memory, and factory M.2 SATA storage. The D3543/D3544 mainboard documentation describes two DDR4 SO-DIMM sockets and an M.2 storage interface with SATA/PCIe capability.

@@ -43,3 +43,7 @@ The build is also published at [lewis.support](https://lewis.support), with the 
 ## Everyday services update
 
 The [v1.2 update](https://lewis.support/releases/v12-a-more-useful-everyday-homelab) covers notes, tasks, PDF tools, private Git hosting, per-device DNS filtering and MCP authentication. Read the [versioned article](posts/2026-11-03-everyday-homelab.md) for the dated checks and remaining recovery work. The blog header now includes a Home link at mobile widths; its Onepage source snapshot is in [site/header](site/header/).
+
+## Home services and recovery update
+
+The [v1.3 update](https://lewis.support/releases/v13-a-lab-thats-easier-to-run) covers recipe and pantry tools, the reorganized knowledge base, authenticated MCP checks, and weekly encrypted backups. The [versioned article](posts/2026-11-13-operating-the-homelab.md) separates verified results from the pending shopping-list sync and full restore drill.

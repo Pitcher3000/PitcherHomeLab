@@ -1,0 +1,17 @@
+{
+  "title": "v1.3 — A lab that’s easier to run",
+  "slug": "v13-a-lab-thats-easier-to-run",
+  "version": "v1.3",
+  "phase": "Phase 6 — Home services and recovery",
+  "progress": "done",
+  "releasedate": "2026-11-13T00:00:00.000Z",
+  "excerpt": "Recipe planning and pantry inventory join the lab, with searchable runbooks, tighter access controls and verified off-site backup snapshots.",
+  "githuburl": "https://github.com/Pitcher3000/PitcherHomeLab/blob/main/posts/2026-11-13-operating-the-homelab.md",
+  "content": "<p>Since v1.2, PitcherHomeLab has gained two kitchen tools and a working off-site backup job. This release also records how the private knowledge base was reorganized and what the latest checks can tell us about remote access.</p><h2>Recipes and pantry inventory</h2><p>Mealie organizes recipes and meal plans. Grocy tracks pantry inventory and shopping lists. On 13 November, both applications answered locally and their remote routes redirected unauthenticated requests to an identity check. The notes, tasks and PDF tools now use the same kind of access gate.</p><p>A workflow that would send Mealie shopping-list items to Grocy was imported into n8n. It remains inactive; application credentials and an end-to-end sync test are still pending.</p><h2>Runbooks you can find</h2><p>The private knowledge base now starts with topic categories and full-text search. Access, applications, automation and recovery each have their own place, and the change log records what was tested and what remains open. On narrow screens, long text wraps and wide tables scroll within the article. Existing links still lead to their sections.</p><h2>Remote access with clear boundaries</h2><p>The remote MCP uses authenticated Streamable HTTP and checks permissions for each tool. The original rollout verified passkey sign-in, OAuth consent and automatic token renewal. In the 13 November checks, the service rejected a request without credentials and a read-only host status call succeeded through the authenticated connector. The legacy transport stayed closed.</p><h2>Encrypted backups are running</h2><p>A weekly Restic job sends encrypted snapshots of service data and configuration to off-site object storage. On 13 November, the job completed successfully and its log recorded consistent SQLite copies of both kitchen apps. Vaultwarden, the self-hosted password manager added earlier in November, also had a database snapshot recorded after deployment.</p><p>A completed backup shows that data was captured. A full restore drill is still pending.</p><h2>Two reliability fixes</h2><p>Container DNS resolution was restored after a resolver change left containers unable to resolve external names. A lookup from the media container worked during the 13 November check. Docker’s address pools were also expanded after the lab ran out of default network allocations. The change log records a successful allocation after the restart.</p><p>Read the <a href=\"/releases\">other releases</a> or explore the <a href=\"/lab\">Lab simulator</a>, which uses simulated data.</p>",
+  "cover": {
+    "src": "media/18625014-d2f3-445d-ad04-b84d86ac3acd",
+    "alt": "Illustration of a compact server connected to kitchen tools, runbooks and backups.",
+    "width": 1440,
+    "height": 810
+  }
+}
