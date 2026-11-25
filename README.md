@@ -47,3 +47,7 @@ The [v1.2 update](https://lewis.support/releases/v12-a-more-useful-everyday-home
 ## Home services and recovery update
 
 The [v1.3 update](https://lewis.support/releases/v13-a-lab-thats-easier-to-run) covers recipe and pantry tools, the reorganized knowledge base, authenticated MCP checks, and weekly encrypted backups. The [versioned article](posts/2026-11-13-operating-the-homelab.md) separates verified results from the pending shopping-list sync and full restore drill.
+
+## Local HTTPS, Open Banking, and household automation update
+
+The [v1.4 update](https://lewis.support/releases/v14-local-https-open-banking-and-household-automation) covers the local-only wildcard HTTPS reverse proxy, native EU Open Banking sync in Actual Budget, the connected Grocy–Mealie–OpenFamily household workflow, closed R2 backup gaps, and the server-wide AI agent operating rulebook. Read the [versioned article](posts/2026-11-25-local-proxy-and-household-automation.md) for the sanitized architecture summary.

@@ -160,3 +160,12 @@ The [v1.3 release](https://lewis.support/releases/v13-a-lab-thats-easier-to-run)
 - Container DNS recovery and additional Docker network capacity. The imported shopping-list sync remains inactive pending setup and testing.
 
 The [article source](posts/2026-11-13-operating-the-homelab.md), CMS payload, and cover are versioned in `posts/`. The private KB retains the operational details.
+
+## 2026-11-25 — v1.4 Local-Only Wildcard HTTPS, Open Banking Sync, Connected Household Stack & R2 Hardening
+
+- **Local-only wildcard reverse proxy:** Added a dedicated LAN/Tailscale-only wildcard subdomain backed by Pi-hole v6 local DNS, an auto-renewing Let's Encrypt ECDSA wildcard certificate (Cloudflare DNS-01), and a single Nginx `map $host` server block with strict RFC1918/Tailscale IP allowlisting. Raw LAN IP:port access remains untouched.
+- **Homepage 3-mode link rewriter:** Extended `custom.js` (`initDynamicLinkRewriter()`) to keep local wildcard visits on local HTTPS, raw LAN IP visits on IP:port, and external dashboard visits on external proxied URLs.
+- **Actual Budget Open Banking hardening:** Raised Nginx Proxy Manager `proxy_read_timeout` / `proxy_send_timeout` to `360s` for the budget host so Actual v26.11.0's 300s `/enablebanking/poll-auth` bank SCA long-poll completes reliably; automated category hierarchy and 40 recurring payee rules via `@actual-app/api`.
+- **Grocy, Mealie & OpenFamily integration:** Sanitized Grocy master data (5 storage locations including freezer flag, local store addresses, 7 aisle product groups, metric/German units + conversions, native price history), created store-sorted shopping lists and dated shopping tasks, and synced 15 recipes + a 31-day meal schedule into both Mealie and OpenFamily.
+- **Restic -> R2 backup gaps closed:** Added online `mariadb-dump --single-transaction --quick` for MariaDB, added the Open WebUI named Docker volume to both `BACKUP_PATHS` and `DB_SCAN_DIRS` (atomic SQLite staging), and added tunnel credentials, host scripts, and agent policy files to the deduplicated backup paths.
+- **AI agent operating rulebook & SSH banner:** Added server-wide `AGENTS.md` / `CLAUDE.md` operating guidelines and a pre-auth SSH greeting banner enforcing KB logging, safe port/subnet allocation, dual dashboard routing, OAuth-by-default with pre-approval for exceptions, and R2 backup coverage.

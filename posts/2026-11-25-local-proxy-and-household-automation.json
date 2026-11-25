@@ -1,0 +1,16 @@
+{
+  "title": "v1.4 — Local-only HTTPS, Open Banking sync, and a connected household stack",
+  "slug": "v14-local-https-open-banking-and-household-automation",
+  "version": "v1.4",
+  "phase": "Phase 7 — Local HTTPS, Open Banking & Household Automation",
+  "progress": "done",
+  "releasedate": "2026-11-25T00:00:00.000Z",
+  "excerpt": "Local-only wildcard HTTPS without exposing internal ports, native EU Open Banking sync in Actual Budget, a connected Grocy–Mealie–OpenFamily household workflow, and tightened R2 backups with an AI agent rulebook.",
+  "githuburl": "https://github.com/Pitcher3000/PitcherHomeLab/blob/main/posts/2026-11-25-local-proxy-and-household-automation.md",
+  "cover": {
+    "src": "media/ea96d335-49c0-4c79-b766-04b8d4a2ad91",
+    "alt": "Minimalist dark technical illustration of a compact fanless server connected to local HTTPS proxy, Open Banking sync, household planning tools, and encrypted cloud backups.",
+    "width": 1376,
+    "height": 768
+  }
+}
